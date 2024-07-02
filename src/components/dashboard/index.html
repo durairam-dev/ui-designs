@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="../../assets/scripts/tailwindcss.js"></script>
+  </head>
+  <body>
+    <div class="flex flex-row h-screen lg:p-2 p-1 bg-gray-800">
+      <!-- Sidebar -->
+      <div
+        id="sidebar"
+        class="lg:w-[280px] w-[calc(100%_-_8px)] lg:h-full h-[calc(100%_-_8px)] lg:relative absolute hidden bg-gray-600 rounded-md lg:mr-2 mr-0 p-2"
+      >
+        <!-- Sidebar header -->
+        <div class="flex flex-row lg:justify-center justify-between">
+          <h2
+            class="text-[24px] text-white lg:w-full w-auto lg:text-center text-left font-semibold bg-gray-800 rounded-md p-2"
+          >
+            Admin Panel
+          </h2>
+          <div class="h-8 w-8 lg:hidden block" onclick="clickSidebarMenu()">
+            <img
+              src="../../assets/icons/close-icon-light.svg"
+              alt="Menu icon"
+              height="100%"
+              width="100%"
+            />
+          </div>
+        </div>
+
+        <!-- Menu -->
+        <ul class="h-max pt-2">
+          <li
+            class="text-[18px] font-medium text-white hover:text-gray-950 hover:bg-white rounded-sm lg:pl-4 pl-2 py-2 cursor-pointer"
+          >
+            Form
+          </li>
+          <li
+            class="text-[18px] font-medium text-white hover:text-gray-950 hover:bg-white rounded-sm lg:pl-4 pl-2 py-2 cursor-pointer"
+          >
+            Dashboard
+          </li>
+          <li
+            class="text-[18px] font-medium text-white hover:text-gray-950 hover:bg-white rounded-sm lg:pl-4 pl-2 py-2 cursor-pointer"
+          >
+            Table
+          </li>
+          <li
+            class="text-[18px] font-medium text-white hover:text-gray-950 hover:bg-white rounded-sm lg:pl-4 pl-2 py-2 cursor-pointer"
+          >
+            Settings
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col lg:space-y-2 space-y-1 w-full">
+        <!-- Header -->
+        <div
+          class="w-full h-[66px] bg-gray-500 rounded-md flex flex-row justify-between items-center lg:p-4 p-2"
+        >
+          <div class="h-8 w-8" onclick="clickSidebarMenu()">
+            <img
+              src="../../assets/icons/menu-icon-light.svg"
+              alt="Menu icon"
+              height="100%"
+              width="100%"
+            />
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="w-full h-full bg-gray-200 rounded-md lg:p-2 p-1"></div>
+      </div>
+    </div>
+
+    <script>
+      function clickSidebarMenu() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.contains("hidden")
+          ? sidebar.classList.remove("hidden")
+          : sidebar.classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
